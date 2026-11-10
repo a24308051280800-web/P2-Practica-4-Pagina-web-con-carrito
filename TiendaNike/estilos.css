@@ -1,0 +1,1146 @@
+/* *Establece una configuración general para todos los elementos, eliminando márgenes y rellenos predeterminados y controlando el cálculo de sus dimensiones. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* *Permite que la navegación entre secciones de la página se realice con desplazamiento suave. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* *Define la tipografía, el color de fondo y el color principal del texto de toda la página. */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #171717;
+}
+
+/* *Elimina el subrayado de los enlaces y hace que utilicen el color del elemento que los contiene. */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* *Diseña el encabezado de la tienda con fondo blanco, distribución flexible, separación entre elementos y una línea inferior. */
+.encabezado {
+    background: #fff;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+}
+
+/* *Da al logotipo un tamaño grande, negrita y estilo inclinado para destacar la marca. */
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* *Resalta el punto del logotipo con un color naranja. */
+.logo span {
+    color: #e44b24;
+}
+
+/* *Organiza los enlaces de navegación y las acciones del encabezado en filas flexibles con separación entre elementos. */
+nav, .acciones {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* *Define el tamaño y el grosor del texto de los enlaces de navegación y de las acciones. */
+nav a, .acciones a {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* *Cambia el color de los enlaces al pasar el cursor sobre ellos para indicar que son interactivos. */
+nav a:hover, .acciones a:hover {
+    color: #e44b24;
+}
+
+/* BANNER PRINCIPAL */
+
+/* *Crea el banner principal con una altura mínima, texto blanco, imagen de fondo y una capa oscura para mejorar la lectura del contenido. */
+.hero {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    color: white;
+    background: #171717;
+}
+
+/* *Limita el ancho del contenido escrito dentro del banner para mantener una distribución ordenada. */
+.hero-texto {
+    max-width: 520px;
+}
+
+/* *Aumenta el espaciado entre las letras de la etiqueta del banner y separa el texto del contenido siguiente. */
+.etiqueta {
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+/* *Ajusta el tamaño y la altura de línea del título principal del banner para que se adapte al ancho de la pantalla. */
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/* *Da espacio debajo del párrafo del banner y mejora la separación entre sus líneas. */
+.hero p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* *Define el aspecto general de los botones y enlaces con estilo de botón, incluyendo color, tamaño, bordes redondeados y cursor interactivo. */
+.boton, button {
+    display: inline-block;
+    border: none;
+    background: #171717;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* *Invierte los colores de los enlaces con clase boton para darles un fondo blanco y texto oscuro. */
+.boton {
+    background: white;
+    color: #171717;
+}
+
+/* *Cambia el fondo y el texto de los botones al pasar el cursor para resaltar la interacción. */
+button:hover, .boton:hover {
+    background: #e44b24;
+    color: white;
+}
+
+/* SECCIONES */
+
+/* *Establece el espacio interior de las secciones y separa su contenido de los bordes de la página. */
+.seccion {
+    padding: 55px 6%;
+}
+
+/* *Define el tamaño de los títulos de las secciones y la distancia respecto al contenido siguiente. */
+.seccion h2 {
+    font-size: 30px;
+    margin-bottom: 28px;
+}
+
+/* CATEGORÍAS */
+
+/* *Organiza las categorías en una cuadrícula de tres columnas con espacios uniformes entre ellas. */
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* *Da formato a cada tarjeta de categoría con fondo blanco, esquinas redondeadas y una animación de movimiento. */
+.categoria {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform .2s;
+}
+
+/* *Eleva ligeramente la tarjeta de categoría cuando el cursor pasa sobre ella. */
+.categoria:hover {
+    transform: translateY(-5px);
+}
+
+/* *Ajusta las imágenes de las categorías al ancho de la tarjeta, mantiene sus proporciones dentro del espacio disponible y establece un fondo gris claro. */
+.categoria img {
+    width: 100%;
+    height: 270px;
+    object-fit: contain;
+    background: #eee;
+    display: block;
+}
+
+/* *Añade espacio interior y define el tamaño de los títulos de las tarjetas de categoría. */
+.categoria h3 {
+    padding: 18px;
+    font-size: 22px;
+}
+
+/* PRODUCTOS */
+
+/* *Distribuye los productos en una cuadrícula de tres columnas y añade separación entre las tarjetas. */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* *Define la apariencia de las tarjetas de productos con fondo blanco, espacio interior, esquinas redondeadas y efectos de transición. */
+.producto {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+}
+
+/* *Eleva la tarjeta del producto y agrega una sombra suave cuando el cursor pasa sobre ella. */
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px #00000012;
+}
+
+/* IMAGEN INDIVIDUAL DE CADA PRODUCTO */
+
+/* *Define el tamaño y la presentación de las imágenes de los productos para que se adapten a sus tarjetas sin deformarse. */
+.producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background: #f5f5f5;
+    border-radius: 8px;
+    display: block;
+}
+
+/* *Separa los nombres de los productos de los elementos cercanos y define sus márgenes. */
+.producto h3 {
+    margin: 15px 0 8px;
+}
+
+/* *Establece el color, la separación entre líneas y la altura mínima de las descripciones para mantener uniformes las tarjetas. */
+.producto p {
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+/* *Muestra el precio del producto en una línea independiente y deja espacio antes del botón. */
+.producto strong {
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* *Hace que el botón de cada producto ocupe todo el ancho disponible de su tarjeta. */
+.producto button {
+    width: 100%;
+}
+
+/* BOLSA DE COMPRAS */
+
+/* *Establece un fondo blanco para la sección de la bolsa de compras. */
+.bolsa {
+    background: white;
+}
+
+/* *Organiza cada artículo de la bolsa en una fila con información y botón de eliminación, separados por una línea inferior. */
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* *Reduce el tamaño del relleno de los botones de eliminación para que se ajusten mejor a las filas del carrito. */
+.item-carrito button {
+    padding: 8px 12px;
+}
+
+/* *Añade separación alrededor de los subtítulos de la bolsa de compras. */
+.bolsa h3 {
+    margin: 20px 0;
+}
+
+/* FORMULARIOS */
+
+/* *Centra los formularios, limita su ancho y les da fondo blanco, espacio interior, esquinas redondeadas y sombra. */
+.formulario-contenedor {
+    max-width: 470px;
+    margin: 55px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px #00000012;
+}
+
+/* *Separa el título del formulario del contenido que aparece debajo. */
+.formulario-contenedor h1 {
+    margin-bottom: 12px;
+}
+
+/* *Define el espacio y el color de los párrafos dentro de los formularios para facilitar su lectura. */
+.formulario-contenedor p {
+    margin-bottom: 22px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* *Muestra las etiquetas de los campos en líneas separadas y destaca su texto con negrita. */
+.formulario-contenedor label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+/* *Da formato a los campos de entrada para que ocupen todo el ancho del formulario y tengan bordes y esquinas redondeadas. */
+.formulario-contenedor input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+/* *Hace que el botón del formulario ocupe todo el ancho disponible y añade espacio por encima. */
+.formulario-contenedor button {
+    width: 100%;
+    margin-top: 22px;
+}
+
+/* *Muestra los enlaces de los formularios en una línea independiente, centrados y subrayados. */
+.enlace-formulario {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* PIE DE PÁGINA */
+
+/* *Diseña el pie de página con contenido centrado, fondo oscuro, texto blanco y espacio interior. */
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #171717;
+    color: white;
+    line-height: 2;
+}
+
+/* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
+
+/* *Adapta las cuadrículas y el encabezado para pantallas de hasta 850 píxeles de ancho, mostrando dos columnas de productos y categorías. */
+@media (max-width: 850px) {
+    .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .encabezado {
+        justify-content: center;
+    }
+}
+
+/* *Adapta la tienda a pantallas de hasta 520 píxeles, colocando los productos y categorías en una columna y ajustando espacios y alineaciones. */
+@media (max-width: 520px) {
+    .productos, .categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 35px 6%;
+    }
+
+    .seccion {
+        padding: 35px 5%;
+    }
+
+    nav, .acciones {
+        justify-content: center;
+    }
+
+    .formulario-contenedor {
+        margin: 25px 15px;
+        padding: 25px;
+    }
+
+    .item-carrito {
+        flex-wrap: wrap;
+    }
+}
+
+/* *Define el aspecto de los mensajes informativos, con espacio interior, separación exterior, bordes redondeados y texto legible. */
+.mensaje {
+    padding: 14px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* *Aplica colores verdes a los mensajes que indican que una operación se realizó correctamente. */
+.mensaje.exito {
+    background: #e2f6e8;
+    color: #176534;
+    border: 1px solid #a9dfb7;
+}
+
+/* *Aplica colores rojos a los mensajes que indican errores o problemas en un formulario u operación. */
+.mensaje.error {
+    background: #fde8e7;
+    color: #a51d19;
+    border: 1px solid #f3b5b2;
+}
+
+/* *Centra el contenido de la página de bienvenida y añade espacio por encima y por debajo del mensaje. */
+.bienvenida {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+/* *Define el tamaño del título de bienvenida y su separación respecto al contenido siguiente. */
+.bienvenida h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* *Establece el tamaño del texto de la página de bienvenida. */
+.bienvenida p {
+    font-size: 16px;
+}
+
+/* *Personaliza el botón para volver a la tienda con fondo oscuro, texto blanco y separación superior. */
+.boton-bienvenida {
+    background: #171717;
+    color: white;
+    margin-top: 10px;
+}
+
+/* *Organiza la información y los enlaces del usuario en una fila flexible con separación, centrado y espacio interior. */
+.usuario-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px;
+    color: #ffffff;
+}
+
+/* *Define el color, tamaño y decoración de los enlaces de la sección de usuario. */
+.usuario-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* *Destaca con negrita el nombre del usuario mostrado en la navegación. */
+.usuario-nav strong {
+    font-weight: bold;
+}
+
+/* *Da al enlace de cerrar sesión un fondo blanco, texto oscuro y forma de botón con bordes redondeados. */
+.usuario-nav .cerrar-sesion {
+    background: #ffffff;
+    color: #111111;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* *Cambia el fondo del botón de cerrar sesión al pasar el cursor sobre él. */
+.usuario-nav .cerrar-sesion:hover {
+    background: #dddddd;
+}
+
+/* Botones de usuario */
+
+/* *Vuelve a definir la distribución de la sección del usuario, ajustando la separación y el color del texto para la versión visual de los botones. */
+.usuario-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 10px;
+    color: #111111;
+}
+
+/* *Da a los enlaces de usuario apariencia de botones oscuros, con texto blanco, bordes redondeados y una transición al interactuar. */
+.usuario-nav a {
+    display: inline-block;
+    background-color: #111111;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 10px 16px;
+    border: 1px solid #111111;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* *Invierte los colores de los botones de usuario cuando el cursor pasa sobre ellos. */
+.usuario-nav a:hover {
+    background-color: #ffffff;
+    color: #111111 !important;
+}
+
+/* *Define el color y el tamaño del texto que identifica al usuario en la navegación. */
+.usuario-nav span {
+    color: #111111;
+    font-size: 14px;
+}
+
+/* *Mantiene en negrita el nombre del usuario para distinguirlo del resto del texto. */
+.usuario-nav strong {
+    font-weight: bold;
+}
+
+/* *Establece el aspecto oscuro del botón de cerrar sesión para que coincida con los demás botones de usuario. */
+.usuario-nav .cerrar-sesion {
+    background-color: #111111;
+    color: #ffffff !important;
+}
+
+/* *Ajusta las imágenes de los productos a una altura de 220 píxeles, conservando sus proporciones y evitando que se deformen. */
+.producto img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* DISEÑO DE LA BOLSA DE COMPRAS */
+
+/* Contenedor principal de la bolsa */
+.bolsa-contenedor {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Título de la bolsa */
+.bolsa-titulo {
+    margin-bottom: 35px;
+}
+
+.bolsa-titulo h1 {
+    font-size: 38px;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.bolsa-titulo p {
+    color: #666;
+}
+
+/* Distribución de productos y resumen */
+.bolsa-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+/* Sección de productos */
+.bolsa-productos {
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+}
+
+.bolsa-productos h2,
+.resumen-carrito h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+/* Cada producto agregado */
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.item-carrito span {
+    font-size: 15px;
+    color: #222;
+}
+
+/* Botón para eliminar productos */
+.item-carrito button {
+    background: #eee;
+    color: #111;
+    border: none;
+    padding: 9px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.item-carrito button:hover {
+    background: #ddd;
+}
+
+/* Enlace para seguir comprando */
+.seguir-comprando {
+    display: inline-block;
+    margin-top: 25px;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.seguir-comprando:hover {
+    text-decoration: underline;
+}
+
+/* Resumen de compra */
+.resumen-carrito {
+    background: #f7f7f7;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.resumen-linea,
+.resumen-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.resumen-total {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    font-size: 19px;
+    color: #111;
+}
+
+/* Botón principal de compra */
+.boton-comprar {
+    width: 100%;
+    background: #111;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.boton-comprar:hover {
+    background: #333;
+}
+
+/* Botón para vaciar la bolsa */
+.boton-vaciar {
+    width: 100%;
+    background: white;
+    color: #111;
+    border: 1px solid #ccc;
+    padding: 13px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.boton-vaciar:hover {
+    background: #eee;
+}
+
+/* Aviso de demostración */
+.nota-compra {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+    .bolsa-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .bolsa-titulo h1 {
+        font-size: 30px;
+    }
+
+    .item-carrito {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* DISEÑO DEL FORMULARIO DE COMPRA */
+
+.checkout-contenedor {
+    max-width: 850px;
+    margin: 45px auto;
+    padding: 25px;
+}
+
+.checkout-contenedor h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.checkout-contenedor > p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.checkout-seccion {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.checkout-seccion h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.checkout-seccion h3 {
+    margin: 15px 0;
+}
+
+.checkout-seccion label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 7px;
+}
+
+.checkout-seccion input,
+.checkout-seccion select,
+.checkout-seccion textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.checkout-seccion textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.checkout-seccion input:focus,
+.checkout-seccion select:focus,
+.checkout-seccion textarea:focus {
+    outline: 1px solid #111;
+    border-color: #111;
+}
+
+#datos-tarjeta {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 10px;
+}
+
+#datos-tarjeta p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+#resumen-productos {
+    margin-bottom: 20px;
+}
+
+.producto-resumen {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 600px) {
+    .checkout-contenedor {
+        padding: 15px;
+    }
+
+    .checkout-contenedor h1 {
+        font-size: 28px;
+    }
+
+    .checkout-seccion {
+        padding: 18px;
+    }
+}
+
+
+/* MENÚ DESPLEGABLE DE CUENTA */
+
+/* Contenedor del botón Cuenta. */
+.cuenta-menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón principal Cuenta. */
+.boton-cuenta {
+    background: #111;
+    color: white;
+    padding: 10px 18px;
+    border: 1px solid #111;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Efecto al pasar el cursor por el botón. */
+.boton-cuenta:hover {
+    background: #e44b24;
+    color: white;
+}
+
+/* Menú que aparece al presionar Cuenta. */
+.menu-cuenta {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 320px;
+    padding: 25px;
+    background: white;
+    color: #171717;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #00000020;
+    z-index: 1000;
+}
+
+/* Muestra el menú cuando se activa. */
+.menu-cuenta.mostrar-cuenta {
+    display: block;
+}
+
+/* Título y descripción del menú. */
+.menu-cuenta h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.menu-cuenta p {
+    font-size: 13px;
+    color: #666;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+/* Botón para registrarse. */
+.menu-cuenta .opcion-cuenta {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* Enlace para cambiar al inicio de sesión. */
+.menu-cuenta .cambiar-cuenta {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.menu-cuenta .cambiar-cuenta a {
+    color: #111 !important;
+    background: transparent !important;
+    padding: 0;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Adaptación para pantallas pequeñas. */
+@media (max-width: 520px) {
+    .menu-cuenta {
+        width: 290px;
+        right: -80px;
+    }
+}
+
+
+
+/* Menú desplegable de la cuenta. */
+.cuenta-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.boton-cuenta {
+    background: #111;
+    color: white;
+    padding: 10px 18px;
+    border: 1px solid #111;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-cuenta:hover {
+    background: #e44b24;
+    color: white;
+}
+
+/* Diseño del panel que contiene los formularios. */
+.menu-cuenta {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 340px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 25px;
+    background: white;
+    color: #171717;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #00000020;
+    z-index: 1000;
+}
+
+.menu-cuenta.mostrar-cuenta {
+    display: block;
+}
+
+.menu-cuenta h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.menu-cuenta p {
+    font-size: 13px;
+    color: #666;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+/* Diseño de los campos de registro e inicio de sesión. */
+.menu-cuenta form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-cuenta form label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.menu-cuenta form input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.menu-cuenta form button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    background: #111;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.menu-cuenta form button:hover {
+    background: #e44b24;
+}
+
+/* Enlace para cambiar entre registro e inicio de sesión. */
+.menu-cuenta .cambiar-cuenta {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.menu-cuenta .cambiar-cuenta a {
+    color: #111 !important;
+    background: transparent !important;
+    padding: 0;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+@media (max-width: 520px) {
+    .menu-cuenta {
+        width: 290px;
+        right: -80px;
+    }
+}
+
+
+/* Corrige la posición del botón Cuenta en el encabezado. */
+.encabezado {
+    position: relative;
+}
+
+.encabezado .usuario-nav {
+    position: absolute;
+    top: 15px;
+    right: 5%;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+}
+
+/* Mantiene el botón Cuenta en la esquina derecha. */
+.cuenta-menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Oculta completamente el formulario hasta presionar Cuenta. */
+.menu-cuenta {
+    display: none !important;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 340px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 25px;
+    background: #fff;
+    color: #171717;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #00000020;
+    z-index: 1002;
+}
+
+/* Muestra el menú solamente cuando se presiona Cuenta. */
+.menu-cuenta.mostrar-cuenta {
+    display: block !important;
+}
+
+/* Acomoda los campos uno debajo del otro. */
+.menu-cuenta form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-cuenta form label {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.menu-cuenta form input {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.menu-cuenta form button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.menu-cuenta .cambiar-cuenta {
+    text-align: center;
+    margin-top: 18px;
+}
+
+@media (max-width: 520px) {
+    .encabezado .usuario-nav {
+        right: 15px;
+        top: 12px;
+    }
+
+    .menu-cuenta {
+        width: 290px;
+    }
+}
+
+
+/* Separa los enlaces de navegación del botón Cuenta. */
+.encabezado nav {
+    margin-right: 170px !important;
+}
+
+/* Mantiene el botón Cuenta en la esquina superior derecha. */
+.encabezado .usuario-nav {
+    position: absolute;
+    top: 15px;
+    right: 5%;
+    z-index: 1001;
+}
+
+/* Evita que los elementos de navegación se encimen. */
+.encabezado nav a {
+    white-space: nowrap;
+}
+
+
+/* Organiza los elementos principales del encabezado. */
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Acomoda los enlaces de navegación. */
+.encabezado nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-right: 0 !important;
+}
+
+/* Coloca la información de la sesión a la derecha. */
+.encabezado .usuario-nav {
+    position: static !important;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+/* Evita que el nombre del usuario se encime con otros elementos. */
+.usuario-nav span {
+    display: inline-block;
+}
+
+/* Mantiene el botón de cerrar sesión en su lugar. */
+.usuario-nav .cerrar-sesion {
+    display: inline-block;
+    white-space: nowrap;
+}
